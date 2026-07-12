@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lista de Tarefas</title>
+  <meta name="description" content="Lista de tarefas com persistência local, pesquisa, filtros e tema claro/escuro." />
+  <meta name="theme-color" content="#2563EB" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page">
+    <main class="board">
+      <header class="app-header">
+        <div>
+          <p class="app-eyebrow">Painel de controle · local</p>
+          <h1 class="app-title">Lista de Tarefas</h1>
+        </div>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-pressed="false"
+        >
+          🌙 Modo escuro
+        </button>
+      </header>
+
+      <p id="storage-warning" class="storage-warning" role="alert" hidden>
+        Não foi possível acessar o armazenamento local. Suas tarefas não serão salvas
+        nesta sessão.
+      </p>
+
+      <form id="task-form" class="task-form" novalidate>
+        <label for="task-input" class="visually-hidden">Nova tarefa</label>
+        <input
+          id="task-input"
+          class="task-input"
+          type="text"
+          placeholder="O que você precisa fazer?"
+          maxlength="200"
+          autocomplete="off"
+        />
+        <button type="submit" class="task-form__submit">Adicionar</button>
+      </form>
+      <p id="field-error" class="field-error" role="alert"></p>
+
+      <div class="toolbar">
+        <label for="search-input" class="visually-hidden">Pesquisar tarefas</label>
+        <input
+          id="search-input"
+          class="search-input"
+          type="search"
+          placeholder="Pesquisar tarefas…"
+          autocomplete="off"
+        />
+        <div class="filters" role="group" aria-label="Filtrar tarefas">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="false">
+            Todas
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="pending"
+            aria-pressed="false"
+          >
+            Pendentes
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="completed"
+            aria-pressed="false"
+          >
+            Concluídas
+          </button>
+        </div>
+      </div>
+
+      <div class="counters" aria-live="polite">
+        <span>Total: <strong id="count-total">0</strong></span>
+        <span>Pendentes: <strong id="count-pending">0</strong></span>
+        <span>Concluídas: <strong id="count-completed">0</strong></span>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-label="Lista de tarefas"></ul>
+      <p id="empty-state" class="empty-state" hidden></p>
+    </main>
+  </div>
+
+  <p id="toast" class="toast" role="status" aria-live="polite"></p>
+
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title">
+    <p id="confirm-title">Excluir esta tarefa permanentemente?</p>
+    <div class="confirm-dialog__actions">
+      <button type="button" id="confirm-cancel">Cancelar</button>
+      <button type="button" id="confirm-delete">Excluir</button>
+    </div>
+  </dialog>
+
+  <script src="js/storage.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
