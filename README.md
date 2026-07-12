@@ -1,6 +1,6 @@
-# Caderno de Tarefas
+# Lista de Tarefas
 
-Aplicação To-Do List em HTML5, CSS3 e JavaScript puro (sem frameworks, sem bibliotecas
+Aplicação To-Do List em HTML5, CSS3 e JavaScript (sem frameworks, sem bibliotecas
 externas, sem backend). Toda a persistência é feita via `LocalStorage`.
 
 ## Estrutura
