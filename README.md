@@ -26,7 +26,7 @@ externas, sem backend). Toda a persistência é feita via `LocalStorage`.
 Abra `index.html` diretamente no navegador (duplo clique) — não precisa de servidor.
 
 > Atenção: como o CSS e o JS estão em arquivos separados, alguns visualizadores de
-> preview embutidos em chats/editores não carregam esses arquivos irmãos e o app pode
+> preview embutidos em chats/editores não carregam esses arquivos, e o app pode
 > aparecer sem estilo ou sem funcionar. Isso não acontece ao abrir o arquivo direto no
 > navegador nem ao publicar no GitHub Pages — só em certas pré-visualizações internas.
 
@@ -38,10 +38,10 @@ Para publicar no GitHub Pages (mesmo padrão dos seus outros projetos):
 
 ## Design
 
-Visual clean e colorido: cantos arredondados, sombras suaves (sem bordas grossas ou
-blocos duros), fundo em gradiente pastel, e cada tarefa recebe uma cor de destaque
+Visual clean e chamativo: cantos arredondados, sombras suaves (sem bordas grossas ou
+blocos duros), fundo em gradiente, e cada tarefa recebe uma cor de destaque
 (faixa esquerda + número de controle) que percorre uma paleta de 6 cores — dá
-identidade visual sem pesar a interface. Tarefas concluídas ganham um selinho
+identidade visual sem pesar a interface. Tarefas concluídas ganham um tick
 "✓ concluído" discreto ao lado da data.
 
 ## Funcionalidades
